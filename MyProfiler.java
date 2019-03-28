@@ -19,13 +19,13 @@ import java.util.TreeMap;
 
 public class MyProfiler<K extends Comparable<K>, V> {
 
-    HashTable<K, V> hashtable = new HashTable<K,V>(1000000, .75);;
-    TreeMap<K, V> treemap = new TreeMap <K,V> ();;
+    HashTableADT<K, V> hashtable;
+    TreeMap<K, V> treemap;
     
     public MyProfiler() {
         // TODO: complete the Profile constructor
         // Instantiate your HashTable and Java's TreeMap
-    	HashTableADT<K,V> hashtable = new HashTable<K,V>(1000000, .75);
+    	HashTable<K,V> hashtable = new HashTable<K,V>(1000000, .75);
     	TreeMap <K,V> treeMap = new TreeMap <K,V> ();
     }
     

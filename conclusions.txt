@@ -6,19 +6,37 @@ Java Flight Recorder and Java Mission Control to justify your conclusions..
 1) What can you tell about the performance of your hash table implementation compared to Java's tree map? 
 Explain why (or when) your hash table is better or worse than Java's Tree Map.
 
-My hashtable seems to perform better than javas built-in tree map. The application only spent 10 percent of the time (took up 10 percent of the samples) executing the insert fucntion on my hashtable. This compared to the 74 percent of the time (74 percent of the samples) the application spent running the put and get function on the tree map tells me that my hashtable is faster and more efficient. The hot methods showed both the put and the get method of the treemap as being hotter than the insert method on my hashtable, the get method on my hashtable didnt take up enough time (didnt make up enough samples) to showup on jmc. So in conclusion, my hashtable is more efficient because the insert and get fucntions run faster than the put and get function on the treemap. I hypothesize that this is a result of the treemap structure built in to java being far more complex than my hashtable, it trades off conisistant and solid performance for efficiency. Whereas my hashtable is simple and not as complex, making it run faster. 
+My hashtable seems to perform better than javas built-in tree map. The application only spent 10 percent of the time (took up 10 
+percent of the samples) executing the insert fucntion on my hashtable. This compared to the 74 percent of the time (74 percent of 
+the samples) the application spent running the put and get function on the tree map tells me that my hashtable is faster and more 
+efficient. The hot methods showed both the put and the get method of the treemap as being hotter than the insert method on my 
+hashtable, the get method on my hashtable didnt take up enough time (didnt make up enough samples) to showup on jmc. So in 
+conclusion, my hashtable is more efficient because the insert and get fucntions run faster than the put and get function on the 
+treemap. I hypothesize that this is a result of the treemap structure built in to java being far more complex than my hashtable, 
+it trades off conisistant and solid performance for efficiency. Whereas my hashtable is simple and not as complex, making it run 
+faster. 
 
 2) What did you observe in java mission control to come to the conclusion above?
 
-The code section of java mission control showed that the classes where the code collected the most samples were in java.util.treemap. I was running the same functions, and the same amount of functions on both the treemap and my hashtable. In the hot methods section on jmc it showed that both the get and put methods of treemap were hotter than the insert method of my hashtable. The hotter the method the more samples were colleted from it throughout the recording which means it was less efficient.
+The code section of java mission control showed that the classes where the code collected the most samples were in 
+java.util.treemap. I was running the same functions, and the same amount of functions on both the treemap and my hashtable. In 
+the hot methods section on jmc it showed that both the get and put methods of treemap were hotter than the insert method of my 
+hashtable. The hotter the method the more samples were colleted from it throughout the recording which means it was less 
+efficient.
 
 3) SCREENSHOT_001.PNG NOTES: Briefly describe what this image 001 shows
 
-This image shows the overview of the hot packages and hot classes of my code. The hot classes portion is more what i used to come to my conclusion. The hot classes portion shows that 200 samples were collected from the treemap class while only 27 were collected from my hashtable class.
+This image shows the overview of the hot packages and hot classes of my code. The hot classes portion is more what i used to come 
+to my conclusion. The hot classes portion shows that 200 samples were collected from the treemap class while only 27 were 
+collected from my hashtable class.
 
 4) SCREENSHOT_002.PNG NOTES: Briefly describe what this image 002 shows
 
-This image shows the overview of the hot methods in my code. The put method in treemap collected 145 samples which made up 50 percent of all the samples. The get method of the treemap collected 37 samples which made up 13.7 percent of the samples and the insert method of my hashtable only made up 25 samples which was 9 percent of the total samples. The get method of my hashtable didnt even collect a single sample. This is beacuse it didnt take up a significant enough amount of time. I know the get method of hashtable was being used because i performed multiple tests on the myprofiler class. 
+This image shows the overview of the hot methods in my code. The put method in treemap collected 145 samples which made up 50 
+percent of all the samples. The get method of the treemap collected 37 samples which made up 13.7 percent of the samples and the 
+insert method of my hashtable only made up 25 samples which was 9 percent of the total samples. The get method of my hashtable 
+didnt even collect a single sample. This is beacuse it didnt take up a significant enough amount of time. I know the get method 
+of hashtable was being used because i performed multiple tests on the myprofiler class. 
 
 
 5) Describe other screenshots if you include them in your submission.

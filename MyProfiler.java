@@ -19,14 +19,14 @@ import java.util.TreeMap;
 
 public class MyProfiler<K extends Comparable<K>, V> {
 
-    HashTableADT<K, V> hashtable;
+	HashTableADT<K, V> hashtable;
     TreeMap<K, V> treemap;
     
     public MyProfiler() {
         // TODO: complete the Profile constructor
         // Instantiate your HashTable and Java's TreeMap
-    	HashTable<K,V> hashtable = new HashTable<K,V>(1000000, .75);
-    	TreeMap <K,V> treeMap = new TreeMap <K,V> ();
+    	hashtable = new HashTable<K,V>(10000000, .75);
+    	treemap = new TreeMap <K,V> ();
     }
     
     public void insert(K key, V value) throws IllegalNullKeyException, DuplicateKeyException {
@@ -44,7 +44,7 @@ public class MyProfiler<K extends Comparable<K>, V> {
     }
     
     public static void main(String[] args) throws IllegalNullKeyException, KeyNotFoundException, DuplicateKeyException {
-        //try {
+        try{
             int numElements = Integer.parseInt(args[0]);
             
             // TODO: complete the main method. 
@@ -66,9 +66,9 @@ public class MyProfiler<K extends Comparable<K>, V> {
             String msg = String.format("Inserted and retreived %d (key,value) pairs", numElements);
             System.out.println(msg);
         }
-        //catch (Exception e) {
-            //System.out.println("Usage: java MyProfiler <number_of_elements>");
-            //System.exit(1);
-        //}
+        catch (Exception e) {
+            System.out.println("Usage: java MyProfiler <number_of_elements>");
+            System.exit(1);
+        }
     }
-//}
+}

@@ -43,8 +43,8 @@ public class MyProfiler<K extends Comparable<K>, V> {
     	treemap.get(key);
     }
     
-    public static void main(String[] args) {
-        try {
+    public static void main(String[] args) throws IllegalNullKeyException, KeyNotFoundException, DuplicateKeyException {
+        //try {
             int numElements = Integer.parseInt(args[0]);
             
             // TODO: complete the main method. 
@@ -66,9 +66,9 @@ public class MyProfiler<K extends Comparable<K>, V> {
             String msg = String.format("Inserted and retreived %d (key,value) pairs", numElements);
             System.out.println(msg);
         }
-        catch (Exception e) {
-            System.out.println("Usage: java MyProfiler <number_of_elements>");
-            System.exit(1);
-        }
+        //catch (Exception e) {
+            //System.out.println("Usage: java MyProfiler <number_of_elements>");
+            //System.exit(1);
+        //}
     }
-}
+//}

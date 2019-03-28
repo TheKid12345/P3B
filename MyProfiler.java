@@ -25,7 +25,7 @@ public class MyProfiler<K extends Comparable<K>, V> {
     public MyProfiler() {
         // TODO: complete the Profile constructor
         // Instantiate your HashTable and Java's TreeMap
-    	HashTableADT<K,V> hashtable = new HashTable<K,V>(1000000, .75);
+    	HashTableADT<K,V> hashtable = new HashTable<K,V>(1000002, .75);
     	TreeMap <K,V> treeMap = new TreeMap <K,V> ();
     }
     
